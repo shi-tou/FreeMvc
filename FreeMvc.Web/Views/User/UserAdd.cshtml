@@ -1,0 +1,91 @@
+﻿@model FreeMvc.Domain.UserInfo
+
+<body>
+@using(Ajax.BeginForm("UserAdd","User",new AjaxOptions { HttpMethod = "Post", OnSuccess = "Callback" },new { id= "UserAdd" }))
+{
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>用户添加/编辑</h5>
+        </div>
+        <div class="ibox-content">
+            <!--form-horizontal:水平排列的表单-->
+            <table class="form form-horizontal">
+                <tr>
+                    <th style="width: 150px;">用户名：</th>
+                    <td>
+                        @Html.TextBox("UserName", Model.UserName, new { @class = "form-control" })
+                    </td>
+                </tr>
+                @if(string.IsNullOrEmpty(Model.ID))
+                {
+                <tr>
+                    <th>登录密码：</th>
+                    <td>
+                        @Html.TextBox("Password", "", new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <th>确认密码：</th>
+                    <td>
+                        @Html.TextBox("Password0", "", new { @class = "form-control" })
+                    </td>
+                </tr>
+                }
+                <tr>
+                    <th>姓名：</th>
+                    <td>
+                        @Html.TextBox("Name", Model.Name, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <th>所属角色:</th>
+                    <td>
+                        @Html.DropDownList("RoleID", ViewData["Roles"] as SelectList, new { @class= "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <button id="btn_login" type="submit" class="btn btn-primary">保 存</button>
+                        <a href="/User/UserList" class="btn btn-success">返回列表</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    }
+    <script>
+        $(function () {
+            $("#UserAdd").validate({
+                rules: {
+                    UserName: "required",
+                    Password: {
+                        required: true,
+                        minlength: 3
+                    },
+                    Password0: {
+                        required: true,
+                        minlength: 3,
+                        equalTo: "#Password"
+                    },
+                    Name: {
+                        required: true
+                    }
+                },
+                messages: {
+                    UserName: "请输入用户名",
+                    Password: {
+                        required: "请输入登录密码",
+                        minlength: $.validator.format("密码不能小于{0}个字 符")
+                    },
+                    Password0: {
+                        required: "请输入确认密码",
+                        minlength: "确认密码不能小于3个字符",
+                        equalTo: "两次输入密码不一致不一致"
+                    },
+                    Name: "请输入姓名"
+                }
+            });
+        });
+    </script>
+</body>

@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC7C41E2-B483-40ED-9B5D-1EBB09E5EA4D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FreeMvc.Web</RootNamespace>
+    <AssemblyName>FreeMvc.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=4.2.0.402, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.4.2.0.402\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=4.2.0.402, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.4.2.0.402\lib\net40\StructureMap.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Webdiyer.MvcPager">
+      <HintPath>..\Libs\Webdiyer.MvcPager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Hui_3.2\404.html" />
+    <Content Include="Hui_3.2\500.html" />
+    <Content Include="Hui_3.2\agile_board.html" />
+    <Content Include="Hui_3.2\article.html" />
+    <Content Include="Hui_3.2\badges_labels.html" />
+    <Content Include="Hui_3.2\basic_gallery.html" />
+    <Content Include="Hui_3.2\blog.html" />
+    <Content Include="Hui_3.2\blueimp.html" />
+    <Content Include="Hui_3.2\buttons.html" />
+    <Content Include="Hui_3.2\calendar.html" />
+    <Content Include="Hui_3.2\carousel.html" />
+    <Content Include="Hui_3.2\chat_view.html" />
+    <Content Include="Hui_3.2\clients.html" />
+    <Content Include="Hui_3.2\code_editor.html" />
+    <Content Include="Hui_3.2\contacts.html" />
+    <Content Include="Hui_3.2\css\animate.min.css" />
+    <Content Include="Hui_3.2\css\bootstrap.min.css" />
+    <Content Include="Hui_3.2\css\demo\webuploader-demo.css" />
+    <Content Include="Hui_3.2\css\font-awesome-ie7.min.css" />
+    <Content Include="Hui_3.2\css\font-awesome.min.css" />
+    <Content Include="Hui_3.2\css\login.min.css" />
+    <Content Include="Hui_3.2\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Hui_3.2\css\plugins\blueimp\css\blueimp-gallery.min.css" />
+    <Content Include="Hui_3.2\css\plugins\chosen\chosen.css" />
+    <Content Include="Hui_3.2\css\plugins\clockpicker\clockpicker.css" />
+    <Content Include="Hui_3.2\css\plugins\codemirror\ambiance.css" />
+    <Content Include="Hui_3.2\css\plugins\codemirror\codemirror.css" />
+    <Content Include="Hui_3.2\css\plugins\colorpicker\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Hui_3.2\css\plugins\cropper\cropper.min.css" />
+    <Content Include="Hui_3.2\css\plugins\datapicker\datepicker3.css" />
+    <Content Include="Hui_3.2\css\plugins\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Hui_3.2\css\plugins\dropzone\basic.css" />
+    <Content Include="Hui_3.2\css\plugins\dropzone\dropzone.css" />
+    <Content Include="Hui_3.2\css\plugins\footable\footable.core.css" />
+    <Content Include="Hui_3.2\css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Hui_3.2\css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Hui_3.2\css\plugins\iCheck\custom.css" />
+    <Content Include="Hui_3.2\css\plugins\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="Hui_3.2\css\plugins\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Hui_3.2\css\plugins\jasny\jasny-bootstrap.min.css" />
+    <Content Include="Hui_3.2\css\plugins\jsTree\style.min.css" />
+    <Content Include="Hui_3.2\css\plugins\markdown\bootstrap-markdown.min.css" />
+    <Content Include="Hui_3.2\css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="Hui_3.2\css\plugins\nouslider\jquery.nouislider.css" />
+    <Content Include="Hui_3.2\css\plugins\simditor\simditor.css" />
+    <Content Include="Hui_3.2\css\plugins\steps\jquery.steps.css" />
+    <Content Include="Hui_3.2\css\plugins\summernote\summernote-bs3.css" />
+    <Content Include="Hui_3.2\css\plugins\summernote\summernote.css" />
+    <Content Include="Hui_3.2\css\plugins\sweetalert\sweetalert.css" />
+    <Content Include="Hui_3.2\css\plugins\switchery\switchery.css" />
+    <Content Include="Hui_3.2\css\plugins\toastr\toastr.min.css" />
+    <Content Include="Hui_3.2\css\plugins\treeview\bootstrap-treeview.css" />
+    <Content Include="Hui_3.2\css\plugins\webuploader\webuploader.css" />
+    <Content Include="Hui_3.2\css\style.min.css" />
+    <Content Include="Hui_3.2\css_animation.html" />
+    <Content Include="Hui_3.2\diff.html" />
+    <Content Include="Hui_3.2\draggable_panels.html" />
+    <Content Include="Hui_3.2\empty_page.html" />
+    <Content Include="Hui_3.2\faq.html" />
+    <Content Include="Hui_3.2\file_manager.html" />
+    <Content Include="Hui_3.2\form_advanced.html" />
+    <Content Include="Hui_3.2\form_avatar.html" />
+    <Content Include="Hui_3.2\form_basic.html" />
+    <Content Include="Hui_3.2\form_builder.html" />
+    <Content Include="Hui_3.2\form_editors.html" />
+    <Content Include="Hui_3.2\form_file_upload.html" />
+    <Content Include="Hui_3.2\form_markdown.html" />
+    <Content Include="Hui_3.2\form_simditor.html" />
+    <Content Include="Hui_3.2\form_validate.html" />
+    <Content Include="Hui_3.2\form_webuploader.html" />
+    <Content Include="Hui_3.2\form_wizard.html" />
+    <Content Include="Hui_3.2\forum_main.html" />
+    <Content Include="Hui_3.2\graph_echarts.html" />
+    <Content Include="Hui_3.2\graph_flot.html" />
+    <Content Include="Hui_3.2\graph_metrics.html" />
+    <Content Include="Hui_3.2\graph_morris.html" />
+    <Content Include="Hui_3.2\graph_peity.html" />
+    <Content Include="Hui_3.2\graph_rickshaw.html" />
+    <Content Include="Hui_3.2\graph_sparkline.html" />
+    <Content Include="Hui_3.2\grid_options.html" />
+    <Content Include="Hui_3.2\iconfont.html" />
+    <Content Include="Hui_3.2\icons.html" />
+    <Content Include="Hui_3.2\img\a1.jpg" />
+    <Content Include="Hui_3.2\img\a2.jpg" />
+    <Content Include="Hui_3.2\img\a3.jpg" />
+    <Content Include="Hui_3.2\img\a4.jpg" />
+    <Content Include="Hui_3.2\img\a5.jpg" />
+    <Content Include="Hui_3.2\img\a6.jpg" />
+    <Content Include="Hui_3.2\img\a7.jpg" />
+    <Content Include="Hui_3.2\img\a8.jpg" />
+    <Content Include="Hui_3.2\img\a9.jpg" />
+    <Content Include="Hui_3.2\img\iconfont-logo.png" />
+    <Content Include="Hui_3.2\img\index.jpg" />
+    <Content Include="Hui_3.2\img\index_4.jpg" />
+    <Content Include="Hui_3.2\img\p1.jpg" />
+    <Content Include="Hui_3.2\img\p2.jpg" />
+    <Content Include="Hui_3.2\img\p3.jpg" />
+    <Content Include="Hui_3.2\img\profile.jpg" />
+    <Content Include="Hui_3.2\img\profile_big.jpg" />
+    <Content Include="Hui_3.2\img\profile_small.jpg" />
+    <Content Include="Hui_3.2\img\p_big1.jpg" />
+    <Content Include="Hui_3.2\img\p_big2.jpg" />
+    <Content Include="Hui_3.2\img\p_big3.jpg" />
+    <Content Include="Hui_3.2\img\qr_code.png" />
+    <Content Include="Hui_3.2\img\wenku_logo.png" />
+    <Content Include="Hui_3.2\index.html" />
+    <Content Include="Hui_3.2\index_v1.html" />
+    <Content Include="Hui_3.2\index_v2.html" />
+    <Content Include="Hui_3.2\index_v3.html" />
+    <Content Include="Hui_3.2\index_v4.html" />
+    <Content Include="Hui_3.2\index_v5.html" />
+    <Content Include="Hui_3.2\invoice.html" />
+    <Content Include="Hui_3.2\invoice_print.html" />
+    <Content Include="Hui_3.2\jstree.html" />
+    <Content Include="Hui_3.2\js\bootstrap.min.js" />
+    <Content Include="Hui_3.2\js\contabs.min.js" />
+    <Content Include="Hui_3.2\js\content.min.js" />
+    <Content Include="Hui_3.2\js\demo\echarts-demo.min.js" />
+    <Content Include="Hui_3.2\js\demo\flot-demo.min.js" />
+    <Content Include="Hui_3.2\js\demo\layer-demo.min.js" />
+    <Content Include="Hui_3.2\js\demo\morris-demo.min.js" />
+    <Content Include="Hui_3.2\js\demo\peity-demo.min.js" />
+    <Content Include="Hui_3.2\js\demo\rickshaw-demo.min.js" />
+    <Content Include="Hui_3.2\js\demo\sparkline-demo.min.js" />
+    <Content Include="Hui_3.2\js\demo\treeview-demo.min.js" />
+    <Content Include="Hui_3.2\js\demo\webuploader-demo.min.js" />
+    <Content Include="Hui_3.2\js\hplus.min.js" />
+    <Content Include="Hui_3.2\js\jquery-2.1.1.min.js" />
+    <Content Include="Hui_3.2\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="Hui_3.2\js\jquery-ui.custom.min.js" />
+    <Content Include="Hui_3.2\js\plugins\beautifyhtml\beautifyhtml.js" />
+    <Content Include="Hui_3.2\js\plugins\blueimp\jquery.blueimp-gallery.min.js" />
+    <Content Include="Hui_3.2\js\plugins\chartJs\Chart.min.js" />
+    <Content Include="Hui_3.2\js\plugins\chosen\chosen.jquery.js" />
+    <Content Include="Hui_3.2\js\plugins\clockpicker\clockpicker.js" />
+    <Content Include="Hui_3.2\js\plugins\codemirror\codemirror.js" />
+    <Content Include="Hui_3.2\js\plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="Hui_3.2\js\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Hui_3.2\js\plugins\cropper\cropper.min.js" />
+    <Content Include="Hui_3.2\js\plugins\datapicker\bootstrap-datepicker.js" />
+    <Content Include="Hui_3.2\js\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Hui_3.2\js\plugins\dataTables\jquery.dataTables.js" />
+    <Content Include="Hui_3.2\js\plugins\diff_match_patch\diff_match_patch.js" />
+    <Content Include="Hui_3.2\js\plugins\dropzone\dropzone.js" />
+    <Content Include="Hui_3.2\js\plugins\easypiechart\jquery.easypiechart.js" />
+    <Content Include="Hui_3.2\js\plugins\echarts\echarts-all.js" />
+    <Content Include="Hui_3.2\js\plugins\fancybox\jquery.fancybox.css" />
+    <Content Include="Hui_3.2\js\plugins\fancybox\jquery.fancybox.js" />
+    <Content Include="Hui_3.2\js\plugins\flot\curvedLines.js" />
+    <Content Include="Hui_3.2\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Hui_3.2\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Hui_3.2\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Hui_3.2\js\plugins\flot\jquery.flot.spline.js" />
+    <Content Include="Hui_3.2\js\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Hui_3.2\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Hui_3.2\js\plugins\footable\footable.all.min.js" />
+    <Content Include="Hui_3.2\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Hui_3.2\js\plugins\gritter\jquery.gritter.css" />
+    <Content Include="Hui_3.2\js\plugins\gritter\jquery.gritter.min.js" />
+    <Content Include="Hui_3.2\js\plugins\iCheck\icheck.min.js" />
+    <Content Include="Hui_3.2\js\plugins\ionRangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="Hui_3.2\js\plugins\jasny\jasny-bootstrap.min.js" />
+    <Content Include="Hui_3.2\js\plugins\jeditable\jquery.jeditable.js" />
+    <Content Include="Hui_3.2\js\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Hui_3.2\js\plugins\jsKnob\jquery.knob.js" />
+    <Content Include="Hui_3.2\js\plugins\jsTree\jstree.min.js" />
+    <Content Include="Hui_3.2\js\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Hui_3.2\js\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Hui_3.2\js\plugins\layer\extend\layer.ext.js" />
+    <Content Include="Hui_3.2\js\plugins\layer\laydate\laydate.js" />
+    <Content Include="Hui_3.2\js\plugins\layer\layer.min.js" />
+    <Content Include="Hui_3.2\js\plugins\layer\layim\layim.css" />
+    <Content Include="Hui_3.2\js\plugins\layer\layim\layim.js" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\icon-ext.png" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\icon.png" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\loading-0.gif" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\loading-1.gif" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\loading-2.gif" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\textbg.png" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\xubox_ico0.png" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\xubox_loading0.gif" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\xubox_loading1.gif" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\xubox_loading2.gif" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\xubox_loading3.gif" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\xubox_title0.png" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\layer.css" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\layer.ext.css" />
+    <Content Include="Hui_3.2\js\plugins\markdown\bootstrap-markdown.js" />
+    <Content Include="Hui_3.2\js\plugins\markdown\bootstrap-markdown.zh.js" />
+    <Content Include="Hui_3.2\js\plugins\markdown\markdown.js" />
+    <Content Include="Hui_3.2\js\plugins\markdown\to-markdown.js" />
+    <Content Include="Hui_3.2\js\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Hui_3.2\js\plugins\morris\morris.js" />
+    <Content Include="Hui_3.2\js\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="Hui_3.2\js\plugins\nestable\jquery.nestable.js" />
+    <Content Include="Hui_3.2\js\plugins\nouslider\jquery.nouislider.min.js" />
+    <Content Include="Hui_3.2\js\plugins\pace\pace.min.js" />
+    <Content Include="Hui_3.2\js\plugins\peity\jquery.peity.min.js" />
+    <Content Include="Hui_3.2\js\plugins\preetyTextDiff\jquery.pretty-text-diff.min.js" />
+    <Content Include="Hui_3.2\js\plugins\prettyfile\bootstrap-prettyfile.js" />
+    <Content Include="Hui_3.2\js\plugins\rickshaw\rickshaw.min.js" />
+    <Content Include="Hui_3.2\js\plugins\rickshaw\vendor\d3.v3.js" />
+    <Content Include="Hui_3.2\js\plugins\simditor\hotkeys.js" />
+    <Content Include="Hui_3.2\js\plugins\simditor\module.js" />
+    <Content Include="Hui_3.2\js\plugins\simditor\simditor.js" />
+    <Content Include="Hui_3.2\js\plugins\simditor\uploader.js" />
+    <Content Include="Hui_3.2\js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Hui_3.2\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Hui_3.2\js\plugins\staps\jquery.steps.min.js" />
+    <Content Include="Hui_3.2\js\plugins\suggest\bootstrap-suggest.min.js" />
+    <Content Include="Hui_3.2\js\plugins\summernote\summernote-zh-CN.js" />
+    <Content Include="Hui_3.2\js\plugins\summernote\summernote.min.js" />
+    <Content Include="Hui_3.2\js\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="Hui_3.2\js\plugins\switchery\switchery.js" />
+    <Content Include="Hui_3.2\js\plugins\toastr\toastr.min.js" />
+    <Content Include="Hui_3.2\js\plugins\treeview\bootstrap-treeview.js" />
+    <Content Include="Hui_3.2\js\plugins\validate\jquery.validate.min.js" />
+    <Content Include="Hui_3.2\js\plugins\validate\messages_zh.min.js" />
+    <Content Include="Hui_3.2\js\plugins\webuploader\webuploader.min.js" />
+    <Content Include="Hui_3.2\js\welcome.js" />
+    <Content Include="Hui_3.2\layer.html" />
+    <Content Include="Hui_3.2\layerdate.html" />
+    <Content Include="Hui_3.2\layerphotos.html" />
+    <Content Include="Hui_3.2\layouts.html" />
+    <Content Include="Hui_3.2\lockscreen.html" />
+    <Content Include="Hui_3.2\login.html" />
+    <Content Include="Hui_3.2\login_v2.html" />
+    <Content Include="Hui_3.2\mailbox.html" />
+    <Content Include="Hui_3.2\mail_compose.html" />
+    <Content Include="Hui_3.2\mail_detail.html" />
+    <Content Include="Hui_3.2\modal_window.html" />
+    <Content Include="Hui_3.2\nestable_list.html" />
+    <Content Include="Hui_3.2\notifications.html" />
+    <Content Include="Hui_3.2\pin_board.html" />
+    <Content Include="Hui_3.2\plugins\fullavatareditor\scripts\fullAvatarEditor.js" />
+    <Content Include="Hui_3.2\plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
+    <Content Include="Hui_3.2\plugins\fullavatareditor\scripts\swfobject.js" />
+    <Content Include="Hui_3.2\plugins\fullavatareditor\scripts\test.js" />
+    <Content Include="Hui_3.2\profile.html" />
+    <Content Include="Hui_3.2\projects.html" />
+    <Content Include="Hui_3.2\project_detail.html" />
+    <Content Include="Hui_3.2\register.html" />
+    <Content Include="Hui_3.2\search_results.html" />
+    <Content Include="Hui_3.2\social_feed.html" />
+    <Content Include="Hui_3.2\spinners.html" />
+    <Content Include="Hui_3.2\suggest.html" />
+    <Content Include="Hui_3.2\sweetalert.html" />
+    <Content Include="Hui_3.2\table_basic.html" />
+    <Content Include="Hui_3.2\table_data_tables.html" />
+    <Content Include="Hui_3.2\table_foo_table.html" />
+    <Content Include="Hui_3.2\table_jqgrid.html" />
+    <Content Include="Hui_3.2\tabs_panels.html" />
+    <Content Include="Hui_3.2\teams_board.html" />
+    <Content Include="Hui_3.2\timeline.html" />
+    <Content Include="Hui_3.2\timeline_v2.html" />
+    <Content Include="Hui_3.2\toastr_notifications.html" />
+    <Content Include="Hui_3.2\tree_view.html" />
+    <Content Include="Hui_3.2\typography.html" />
+    <Content Include="Hui_3.2\webim.html" />
+    <Content Include="Hui_3.2\widgets.html" />
+    <Content Include="Scripts\common.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\zTree_v3\css\awesomeStyle\awesome.css" />
+    <Content Include="Scripts\zTree_v3\css\awesomeStyle\img\loading.gif" />
+    <Content Include="Scripts\zTree_v3\css\demo.css" />
+    <Content Include="Scripts\zTree_v3\css\metroStyle\img\line_conn.png" />
+    <Content Include="Scripts\zTree_v3\css\metroStyle\img\loading.gif" />
+    <Content Include="Scripts\zTree_v3\css\metroStyle\img\metro.gif" />
+    <Content Include="Scripts\zTree_v3\css\metroStyle\img\metro.png" />
+    <Content Include="Scripts\zTree_v3\css\metroStyle\metroStyle.css" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\loading.gif" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Scripts\zTree_v3\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Scripts\zTree_v3\demo\cn\bigdata\common.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\bigdata\diy_async.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\bigdata\page.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\async.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\async_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\click.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\custom_font.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\custom_icon.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\custom_iconSkin.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\expand.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\noicon.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\noline.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\otherMouse.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\searchNodes.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\simpleData.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\standardData.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\update_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\core\url.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\checkbox.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\checkbox_chkDisabled.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\checkbox_count.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\checkbox_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\checkbox_halfCheck.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\checkbox_nocheck.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\radio.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\radio_chkDisabled.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\radio_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\radio_halfCheck.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\excheck\radio_nocheck.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exedit\async_edit.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exedit\drag.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exedit\drag_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exedit\drag_super.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exedit\edit.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exedit\edit_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exedit\edit_super.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exedit\multiTree.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exhide\checkbox.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exhide\common.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\exhide\radio.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\index.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\asyncForAll.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\awesome.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\checkbox_radio.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\diydom.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\dragWithOther.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\left_menu.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\left_menuForOutLook.gif" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\left_menuForOutLook.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\left_menuForOutLook.png" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\metro.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\oneclick.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\oneroot.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\rightClickMenu.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\select_menu.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\select_menu_checkbox.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\select_menu_radio.html" />
+    <Content Include="Scripts\zTree_v3\demo\cn\super\singlepath.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\bigdata\common.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\bigdata\diy_async.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\bigdata\page.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\async.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\async_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\click.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\custom_font.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\custom_icon.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\custom_iconSkin.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\expand.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\noicon.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\noline.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\otherMouse.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\searchNodes.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\simpleData.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\standardData.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\update_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\core\url.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\checkbox.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\checkbox_chkDisabled.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\checkbox_count.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\checkbox_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\checkbox_halfCheck.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\checkbox_nocheck.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\radio.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\radio_chkDisabled.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\radio_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\radio_halfCheck.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\excheck\radio_nocheck.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exedit\async_edit.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exedit\drag.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exedit\drag_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exedit\drag_super.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exedit\edit.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exedit\edit_fun.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exedit\edit_super.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exedit\multiTree.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exhide\checkbox.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exhide\common.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\exhide\radio.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\index.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\asyncForAll.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\awesome.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\checkbox_radio.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\diydom.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\dragWithOther.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\left_menu.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\left_menuForOutLook.gif" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\left_menuForOutLook.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\left_menuForOutLook.png" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\metro.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\oneclick.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\oneroot.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\rightClickMenu.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\select_menu.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\select_menu_checkbox.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\select_menu_radio.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\singlepath.html" />
+    <Content Include="Scripts\zTree_v3\demo\en\super\ztree.html" />
+    <Content Include="Scripts\zTree_v3\js\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.all.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.all.min.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.core.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.core.min.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.excheck.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.excheck.min.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.exedit.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.exedit.min.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.exhide.js" />
+    <Content Include="Scripts\zTree_v3\js\jquery.ztree.exhide.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Attribute\OnlyNeedLogin.cs" />
+    <Compile Include="Attribute\AnonymousAttribute.cs" />
+    <Compile Include="Attribute\PermissionAttribute.cs" />
+    <Compile Include="Common\UserLoginInfo.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PermissionType.cs" />
+    <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\ZTreeData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IocFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Hui_3.2\css\plugins\jqgrid\ui.jqgrid.css%400820" />
+    <Content Include="Hui_3.2\fonts\fontawesome-webfont.eot" />
+    <Content Include="Hui_3.2\fonts\fontawesome-webfont.svg" />
+    <Content Include="Hui_3.2\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Hui_3.2\fonts\fontawesome-webfont.woff" />
+    <Content Include="Hui_3.2\fonts\FontAwesome.otf" />
+    <Content Include="Hui_3.2\js\plugins\jqgrid\i18n\grid.locale-cn.js%400820" />
+    <Content Include="Hui_3.2\js\plugins\jqgrid\jquery.jqGrid.min.js%400820" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\default\vssver2.scc" />
+    <Content Include="Hui_3.2\js\plugins\layer\skin\vssver2.scc" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\LoginOut.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\User\UserList.cshtml" />
+    <Content Include="Views\Shared\_Pager.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\User\UserAdd.cshtml" />
+    <Content Include="Views\User\RoleList.cshtml" />
+    <Content Include="Views\User\RoleAdd.cshtml" />
+    <Content Include="Views\User\PermissionList.cshtml" />
+    <Content Include="Views\User\PermissionAdd.cshtml" />
+    <Content Include="Scripts\zTree_v3\css\awesomeStyle\awesome.less" />
+    <Content Include="Scripts\zTree_v3\css\awesomeStyle\fa.less" />
+    <Content Include="Scripts\zTree_v3\demo\cn\asyncData\getNodes.php" />
+    <Content Include="Scripts\zTree_v3\demo\cn\asyncData\getNodesForBigData.php" />
+    <Content Include="Scripts\zTree_v3\demo\en\asyncData\getNodes.php" />
+    <Content Include="Scripts\zTree_v3\demo\en\asyncData\getNodesForBigData.php" />
+    <Content Include="Views\Home\PerssionTip.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeMvc.Common\FreeMvc.Common.csproj">
+      <Project>{66d16b63-073f-4a64-ad6d-8e1c93c0c93d}</Project>
+      <Name>FreeMvc.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeMvc.Dao\FreeMvc.Dao.csproj">
+      <Project>{2d7decbe-533b-443a-a4ca-3402a54c0c5c}</Project>
+      <Name>FreeMvc.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeMvc.Domain\FreeMvc.Domain.csproj">
+      <Project>{6a6d0017-2666-414a-b62c-f74d533fb3c6}</Project>
+      <Name>FreeMvc.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeMvc.Service\FreeMvc.Service.csproj">
+      <Project>{15268851-ec63-4eff-af47-2850421e883c}</Project>
+      <Name>FreeMvc.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeMvc.ViewModel\FreeMvc.ViewModel.csproj">
+      <Project>{6c90621b-eebc-452f-9dbf-ff302b3f7d06}</Project>
+      <Name>FreeMvc.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16379</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:16379/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

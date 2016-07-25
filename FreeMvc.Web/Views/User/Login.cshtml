@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "登录页面";
+}
+<body class="gray-bg">
+    @using (Ajax.BeginForm("Login", "User",new AjaxOptions { HttpMethod="Post",OnSuccess="Callback" }))
+    {
+        <div class="middle-box text-center loginscreen  animated fadeInDown" >
+            <div>
+                <div>
+                    <h1 class="logo-name" style="font-size:88px;">FreeMvc</h1>
+                </div>
+                <h3>欢迎使用 FreeMvc内容管理平台</h3>
+                <div class="m-t">
+                    <div class="form-group">
+                        @Html.TextBox("UserName", "admin", new { required = "required", @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Password("Password", "", new { required = "required", @class = "form-control" })
+                    </div>
+                    <button id="btn_login" type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+                    <p style="color:red;">@ViewBag.Msg</p>
+                    <p class="text-muted text-center">
+                        power by 石头小神
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+    <script>
+        function Callback(data) {
+            if (data.IsOk) {
+                location.href = '/Home/Index';
+            }
+            else {
+                layer.tips(data.Msg, '#btn_login', {
+                    tips: [2, '#3595CC'],
+                    time: 3000
+                });
+            }
+        }
+    </script>
+</body>

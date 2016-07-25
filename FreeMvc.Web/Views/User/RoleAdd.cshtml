@@ -1,0 +1,97 @@
+﻿
+@model FreeMvc.Domain.RoleInfo
+
+<script src="~/Scripts/zTree_v3/js/jquery.ztree.all.min.js"></script>
+<link href="~/Scripts/zTree_v3/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+<body>
+@using(Ajax.BeginForm("RoleAdd","User",new AjaxOptions { HttpMethod = "Post", OnSuccess = "Callback" },new { id= "RoleAdd" }))
+{
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>角色添加/编辑</h5>
+        </div>
+        <div class="ibox-content">
+            <!--form-horizontal:水平排列的表单-->
+            <table class="form form-horizontal">
+                <tr>
+                    <th style="width: 150px;">角色名：</th>
+                    <td>
+                        @Html.TextBox("Name",Model.Name, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <th>备注：</th>
+                    <td>
+                        @Html.TextBox("Remark", Model.Remark, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <th>权限分配：</th>
+                    <td>
+                        <div style="width: 300px; height: 300px; overflow: scroll; border: solid 1px #d4d4d4;">
+                            <ul id="TreePermission" class="ztree" style="width: 280px; overflow: auto;"></ul>
+                        </div>
+                        <input type="hidden" id="PermissionIDs" name="PermissionIDs" value="@ViewBag.PermissionIDs" />
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <button id="btn_login" type="submit" class="btn btn-primary">保 存</button>
+                        <a href="/User/RoleList" class="btn btn-success">返回列表</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    }
+    <script>
+        //ZTree配置
+        var setting = {
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                onCheck: getAllCheckNodes
+            }
+        };
+
+        $(function () {
+            $("#RoleAdd").validate({
+                rules: {
+                    Name: {
+                        required: true
+                    }
+                },
+                messages: {
+                    Name: "请输入角色名"
+                }
+            });
+            //ZTree初始化
+            var json = '@Html.Raw( ViewBag.PermissionList)';
+            if (json == '')
+                return;
+            $.fn.zTree.init($("#TreePermission"), setting, eval(json));
+            var treeObj = $.fn.zTree.getZTreeObj("TreePermission");
+            treeObj.expandAll(true);
+        });
+        
+        //获取所有选中的值
+        function getAllCheckNodes() {
+            var treeObj = $.fn.zTree.getZTreeObj('TreePermission'),
+                    nodes = treeObj.getCheckedNodes(true),
+                    v = '';
+            for (var i = 0; i < nodes.length; i++) {
+                if (v != '')
+                    v += ',';
+                v += nodes[i].value;
+            }
+            $('#PermissionIDs').val(v);
+        }
+    </script>
+</body>

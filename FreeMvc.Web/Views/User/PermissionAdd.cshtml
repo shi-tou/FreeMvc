@@ -1,0 +1,85 @@
+﻿
+@model FreeMvc.Domain.PermissionInfo
+
+<body>
+    @using (Ajax.BeginForm("PermissionAdd", "User", new AjaxOptions { HttpMethod = "Post", OnSuccess = "Callback" }, new { id = "PermissionAdd" }))
+    {
+        <div class="ibox">
+            <div class="ibox-title">
+                <h5>权限添加/编辑</h5>
+            </div>
+            <div class="ibox-content">
+                <!--form-horizontal:水平排列的表单-->
+                <table class="form form-horizontal">
+                    <tr>
+                        <th>父节点：</th>
+                        <td>
+                            @Html.DropDownList("ParentID", ViewData["PermissionList"] as SelectList, "-根节点-", new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>类别：</th>
+                        <td>
+                            @Html.DropDownList("Type", ViewData["PermissionType"] as SelectList, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 150px;">权限名：</th>
+                        <td>
+                            @Html.TextBox("Name", Model.Name, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 150px;">权限编码：</th>
+                        <td>
+                            @Html.TextBox("Code", Model.Code, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Icon图标：</th>
+                        <td>
+                            @Html.TextBox("Icon", Model.Icon, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Url地址：</th>
+                        <td>
+                            @Html.TextBox("Url", Model.Url, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>排序号：</th>
+                        <td>
+                            @Html.TextBox("Sort", Model.Sort, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <button id="btn_login" type="submit" class="btn btn-primary">保 存</button>
+                            <a href="/User/PermissionList" class="btn btn-success">返回列表</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    }
+    <script>
+        $(function () {
+            $("#PermissionAdd").validate({
+                rules: {
+                    Name: {
+                        required: true
+                    },
+                    Code: {
+                        required: true
+                    }
+                },
+                messages: {
+                    Name: "请输入权限名",
+                    Code: "请输入权限编码",
+                }
+            });
+        });
+    </script>
+</body>

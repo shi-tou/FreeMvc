@@ -1,0 +1,61 @@
+﻿@model Webdiyer.WebControls.Mvc.PagedList<FreeMvc.Domain.RoleInfo>
+@{
+    ViewBag.Title = "角色列表";
+}
+
+<body>
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>用户列表</h5>
+            <div class="ibox-tools">
+                <a href="/User/RoleAdd" class="btn btn-danger btn-sm">
+                    <i class="fa fa-plus"></i>&nbsp;添加
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            @using (Html.BeginForm("RoleList" ,"User", FormMethod.Get))
+            {
+                <table class="form-group">
+                    <tr>
+                        <th>名称：</th>
+                        <td>
+                            @Html.TextBox("Name", "", new { @class = "form-control" })
+                        </td>
+                        <td>
+                            <input type="submit" class="btn btn-primary" value="查询" />
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+    <table class="table table-hover table-bordered ">
+        <thead>
+            <tr>
+                <th style="width:45px; text-align:center;">#</th>
+                <th>角色ID</th>
+                <th>角色名</th>
+                <th>备注</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int index = 1;}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width:45px; text-align:center;">@(index++)</td>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Remark</td>
+                    <td>
+                        <a class="label label-success" href="/User/RoleAdd/@item.ID"><i class="fa fa-edit"></i>&nbsp;编辑</a>
+                        <a class="label label-success" onclick="javascript:Delete('/User/RoleDelete/@item.ID');"><i class="fa fa-times"></i>&nbsp;删除</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.Partial("_Pager", Model)
+</body>

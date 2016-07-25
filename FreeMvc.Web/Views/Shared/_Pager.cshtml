@@ -1,0 +1,26 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model IPagedList
+@{
+    Layout = null;
+}
+<div class="pager">
+    @if (Model != null && Model.TotalItemCount > 0)
+    {
+        <div style="float:right; margin:0px 50px;">&nbsp;<span>@(Model.TotalItemCount)</span> 条记录 &nbsp; 共&nbsp;<span class="tc-blue">@(Model.TotalItemCount % Model.PageSize == 0 ? (Model.TotalItemCount / Model.PageSize) : (Model.TotalItemCount / Model.PageSize + 1))</span>&nbsp;页</div>
+    }
+    <div style="float:right;">
+        @Html.Pager(Model, new PagerOptions()
+       {
+           PageIndexParameterName = "PageIndex",
+           NextPageText = ">",
+           PrevPageText = "<",
+           ShowFirstLast = false,
+           ShowMorePagerItems = true,
+           CurrentPagerItemTemplate = "<a class='current'>{0}</a>",
+           DisabledPagerItemTemplate = "<a class='disabled'>{0}</a>",
+           NumericPagerItemCount = 7,
+           AlwaysShowFirstLastPageNumber = true
+       })
+    </div>
+</div>
+

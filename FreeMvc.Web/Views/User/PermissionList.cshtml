@@ -1,0 +1,68 @@
+﻿@model List<FreeMvc.Domain.PermissionInfo>
+@{
+    ViewBag.Title = "权限列表";
+}
+<script>
+    function GetType(t) {
+        if (t == 1) {
+            document.write('模块');
+        }
+        if (t == 2)
+            document.write('主窗体');
+        if (t == 3)
+            document.write('工具栏');
+    }
+</script>
+<body>
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>权限列表</h5>
+            <div class="ibox-tools">
+                <a href="/User/PermissionAdd" class="btn btn-danger btn-sm">
+                    <i class="fa fa-plus"></i>&nbsp;添加
+                </a>  
+            </div>
+        </div>
+        @if (!string.IsNullOrEmpty(ViewBag.ParentName)) { 
+        <div class="ibox-content">
+            <h6>@("当前父类：" + ViewBag.ParentName)</h6>
+        </div>
+        }
+    </div>
+    <table class="table table-hover table-bordered ">
+        <thead>
+            <tr>
+                <th style="width:45px; text-align:center;">#</th>
+                <th>权限ID</th>
+                <th>权限名</th>
+                <th>权限编码</th>
+                <th>类型</th>
+                <th>Icon图标</th>
+                <th>Url地址</th>
+                <th>排序号</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int index = 1;}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width:45px; text-align:center;">@(index++)</td>
+                    <td>@item.ID</td>
+                    <td>@Html.Raw(item.Name)</td>
+                    <td>@item.Code</td>
+                    <td><script>GetType(@item.Type)</script></td>
+                    <td>@item.Icon</td>
+                    <td>@item.Url</td>
+                    <td>@item.Sort</td>
+                    <td>
+                        <a class="label label-success" href="/User/PermissionAdd/@item.ID"><i class="fa fa-edit"></i>编辑</a>
+                        <a class="label label-success" href="javascript:void(0);" onclick="javascript:Delete('/User/PermissionDelete/@item.ID');"><i class="fa fa-times"></i>删除</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+   
+</body>
